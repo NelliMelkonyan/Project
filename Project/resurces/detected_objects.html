@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detected objects</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="../js/mobile-menu.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/detected_objects.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-3 col-xs-12 search-col">
+                <div class="dropdown">
+                    <input class="search-input" type="text" placeholder="Search by date">
+                    <button class="search-button dropdown-toggle" type="button" data-toggle="dropdown">
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="list dropdown-menu">
+
+                        <li>
+                            <p>Select date : </p>
+                            <input name="date" type="date" class="date">
+                        </li>
+                        <li>
+                            <p>Select time : </p>
+                            <input name="time" type="time" class="time">
+                            <input name="t" type="time" class="time">
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="dropdown">
+                    <input class="search-input" type="text" placeholder="Search by camera">
+                    <button class="search-button dropdown-toggle" type="button" data-toggle="dropdown">
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="list dropdown-menu">
+                        <li><a href="#">Camera1</a>
+                        <li><a href="#">Camera2</a>
+                        <li><a href="#">Camera3</a>
+                        <li><a href="#">Camera4</a>
+                        <li><a href="#">Camera5</a>
+                    </ul>
+                </div>
+            </div>
+            <div class="detected-list col-md-9 col-sm-9 col-xs-12">
+                <script src="object_data.js"></script>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
