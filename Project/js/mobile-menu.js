@@ -1,8 +1,17 @@
 function resizeIframe(obj) {
-    obj.style.height = (screen.availHeight - 180)+ 'px';
+    obj.style.height = (screen.height - 150)+ 'px';
 }
 
+
+function display() {
+    document.getElementById('log').textContent = 'Log In';
+}
 $(document).ready(function(){
+    var user = getCookie('a@mail.ru');
+    if (user){
+        document.getElementById('log').textContent = 'Log Out';
+        document.getElementById("log").addEventListener("click", display);
+    }
     $('#nav-menu').click(function(){
         $('#nav').toggle(500);
     });
@@ -33,6 +42,7 @@ $(document).ready(function(){
 });
 
 
+
 function ChangeContent(pageName) {
     switch (pageName) {
         case "home":
@@ -50,8 +60,19 @@ function ChangeContent(pageName) {
     }
 }
 
-
-
-
-
+function getCookie(mail) {
+    var name = mail + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) === ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) === 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
 
